@@ -89,7 +89,8 @@ document.getElementById("splitVCFButton").addEventListener("click", async functi
         contactName = `${parseWithSpasi(nameBase)} ${parsedNameFile}${fileIndex} ${additionalFileName} ${formattedLocal}`.trim();
 
       } else if (startNumberOnly) {
-        contactName = `${parseWithSpasi(nameBase)} ${startNumber} ${formattedLocal}`.trim();
+        // ✔ Sudah diperbaiki
+        contactName = `${parseWithSpasi(nameBase)} ${fileIndex} ${formattedLocal}`.trim();
 
       } else {
         contactName = nameBase
