@@ -69,7 +69,8 @@ document.getElementById("splitVCFButton").addEventListener("click", async functi
   const zip = new JSZip();
 
   chunks.forEach((chunk, chunkIndex) => {
-    const fileIndex = startNumber + chunkIndex;
+    const fileIndex = startNumber + chunkIndex; // ← PENTING!
+
     const parsedFileName = parseWithSpasi(fileNameRaw).trimEnd();
     const currentFileName = `${parsedFileName}${fileIndex}${additionalFileName ? " " + additionalFileName : ""}`.trim();
 
@@ -89,7 +90,7 @@ document.getElementById("splitVCFButton").addEventListener("click", async functi
         contactName = `${parseWithSpasi(nameBase)} ${parsedNameFile}${fileIndex} ${additionalFileName} ${formattedLocal}`.trim();
 
       } else if (startNumberOnly) {
-        // ✔ Sudah diperbaiki
+        // 🔥 SUDAH DIBENERIN → fileIndex, BUKAN startNumber
         contactName = `${parseWithSpasi(nameBase)} ${fileIndex} ${formattedLocal}`.trim();
 
       } else {
